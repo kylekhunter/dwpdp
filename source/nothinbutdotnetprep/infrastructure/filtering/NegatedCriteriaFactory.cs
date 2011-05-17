@@ -23,5 +23,15 @@
     {
       return original.create_using(criteria).not();
     }
+
+    public IMatchAn<ItemToFilter> greater_than(PropertyType value)
+    {
+        return original.greater_than(value).not();
+    }
+
+    public IMatchAn<ItemToFilter> between(PropertyType start, PropertyType end)
+    {
+        return original.between(start, end).not();
+    }
   }
 }

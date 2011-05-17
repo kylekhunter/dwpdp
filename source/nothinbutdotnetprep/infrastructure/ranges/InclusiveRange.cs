@@ -2,7 +2,7 @@ using System;
 
 namespace nothinbutdotnetprep.infrastructure.ranges
 {
-  public class InclusiveRange<T> : Range<T> where T : IComparable<T>
+  public class InclusiveRange<T> : Range<T>
   {
     T start;
     T end;
@@ -13,7 +13,7 @@ namespace nothinbutdotnetprep.infrastructure.ranges
       this.end = end;
     }
 
-    public bool contains(T value)
+    public bool contains(IComparable<T> value)
     {
       return value.CompareTo(start) >= 0 && value.CompareTo(end) <= 0;
     }

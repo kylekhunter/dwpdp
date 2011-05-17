@@ -2,8 +2,8 @@ using System;
 
 namespace nothinbutdotnetprep.infrastructure.ranges
 {
-  public interface Range<T> where T : IComparable<T>
+  public interface Range<T>
   {
-    bool contains(T value);
+    bool contains(IComparable<T> value);
   }
 }

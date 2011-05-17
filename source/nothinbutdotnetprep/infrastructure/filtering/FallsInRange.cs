@@ -3,7 +3,7 @@ using nothinbutdotnetprep.infrastructure.ranges;
 
 namespace nothinbutdotnetprep.infrastructure.filtering
 {
-  public class FallsInRange<T> : IMatchAn<T> where T : IComparable<T>
+  public class FallsInRange<T> : IMatchAn<T>
   {
     Range<T> range;
 
@@ -14,7 +14,7 @@ namespace nothinbutdotnetprep.infrastructure.filtering
 
     public bool matches(T item)
     {
-      return range.contains(item);
+      return range.contains((IComparable<T>) item);
     }
   }
 }

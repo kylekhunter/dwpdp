@@ -2,7 +2,7 @@ using System;
 
 namespace nothinbutdotnetprep.infrastructure.ranges
 {
-  public class ExclusiveRangeWithNoUpperBound<T> : Range<T> where T : IComparable<T>
+  public class ExclusiveRangeWithNoUpperBound<T> : Range<T> 
   {
     T start;
 
@@ -11,7 +11,7 @@ namespace nothinbutdotnetprep.infrastructure.ranges
       this.start = start;
     }
 
-    public bool contains(T value)
+    public bool contains(IComparable<T> value)
     {
       return value.CompareTo(start) > 0;
     }
